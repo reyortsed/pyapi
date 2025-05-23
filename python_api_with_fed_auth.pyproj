@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5e4addb4-83a3-4206-83fb-8a0b328c4acf}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>main.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>none</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\v1\controllers\auth.py" />
+    <Compile Include="api\v1\controllers\users.py" />
+    <Compile Include="auth\auth.py" />
+    <Compile Include="common\update_helpers.py" />
+    <Compile Include="database\database.py" />
+    <Compile Include="database\request_context.py" />
+    <Compile Include="database\__init__.py" />
+    <Compile Include="main.py" />
+    <Compile Include="models\db\User.py" />
+    <Compile Include="models\db\__init__.py" />
+    <Compile Include="models\dto\userDTOs.py" />
+    <Compile Include="models\dto\__init__.py" />
+    <Compile Include="utils\rate_limiter.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="api\" />
+    <Folder Include="api\v1\" />
+    <Folder Include="api\v1\controllers" />
+    <Folder Include="auth" />
+    <Folder Include="common" />
+    <Folder Include="database" />
+    <Folder Include="models\" />
+    <Folder Include="models\db" />
+    <Folder Include="models\dto" />
+    <Folder Include="utils" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Description>env (Python 3.13)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <Version>3.13</Version>
+      <Architecture>X64</Architecture>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+    </Interpreter>
+    <Interpreter Include="venv\">
+      <Id>venv</Id>
+      <Description>venv (Python 3.13)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <Version>3.13</Version>
+      <Architecture>X64</Architecture>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
