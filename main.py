@@ -13,12 +13,12 @@ import uvicorn
 
 def open_browser():
     time.sleep(1)
-    webbrowser.open("https://127.0.0.1:8000/docs")
+    webbrowser.open("https://localhost/docs")
 
 threading.Thread(target=open_browser).start()
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False, ssl_keyfile="key.pem", ssl_certfile="cert.pem" )
+    uvicorn.run("main:app", host="127.0.0.1", port=443, reload=False, ssl_keyfile="key.pem", ssl_certfile="cert.pem" )
     
 @asynccontextmanager
 async def lifespan(app: FastAPI):
