@@ -1,10 +1,11 @@
 from http import HTTPStatus
 from fastapi import Depends, APIRouter, Request
 from typing import List
-from database import *
+from app.db.database import *
+from app.db.request_context import *
 from sqlalchemy import select, insert, delete, update 
-from models.db import users
-from models.dto import CreateUserDTO, ReadUserDTO, UpdateUserDTO
+from app.models import users
+from app.schemas import CreateUserDTO, ReadUserDTO, UpdateUserDTO
 from fastapi.responses import JSONResponse
 
 router = APIRouter()

@@ -23,34 +23,39 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="localhost.cf" />
+    <Content Include="app\common\utils\makecert.sh" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
+    <Content Include="app\db\test.db" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="api\v1\controllers\auth.py" />
-    <Compile Include="api\v1\controllers\users.py" />
-    <Compile Include="auth\auth.py" />
-    <Compile Include="common\update_helpers.py" />
-    <Compile Include="database\database.py" />
-    <Compile Include="database\request_context.py" />
-    <Compile Include="database\__init__.py" />
+    <Compile Include="app\api\v1\controllers\auth.py" />
+    <Compile Include="app\api\v1\controllers\users.py" />
+    <Compile Include="app\common\auth\auth.py" />
+    <Compile Include="app\common\update_helpers.py" />
+    <Compile Include="app\db\database.py" />
+    <Compile Include="app\db\request_context.py" />
+    <Compile Include="app\db\__init__.py" />
+    <Compile Include="app\models\__init__.py" />
     <Compile Include="main.py" />
-    <Compile Include="models\db\User.py" />
-    <Compile Include="models\db\__init__.py" />
-    <Compile Include="models\dto\userDTOs.py" />
-    <Compile Include="models\dto\__init__.py" />
-    <Compile Include="utils\rate_limiter.py" />
+    <Compile Include="app\models\User.py" />
+    <Compile Include="app\schemas\userDTOs.py" />
+    <Compile Include="app\schemas\__init__.py" />
+    <Compile Include="app\common\utils\rate_limiter.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="api\" />
-    <Folder Include="api\v1\" />
-    <Folder Include="api\v1\controllers" />
-    <Folder Include="auth" />
-    <Folder Include="common" />
-    <Folder Include="database" />
-    <Folder Include="models\" />
-    <Folder Include="models\db" />
-    <Folder Include="models\dto" />
-    <Folder Include="utils" />
+    <Folder Include="app\api\" />
+    <Folder Include="app\api\v1\" />
+    <Folder Include="app\api\v1\controllers\" />
+    <Folder Include="app\common\auth\" />
+    <Folder Include="app\common\" />
+    <Folder Include="app\db\" />
+    <Folder Include="app\models\" />
+    <Folder Include="app\schemas\" />
+    <Folder Include="app\" />
+    <Folder Include="app\common\utils\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

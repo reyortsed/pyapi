@@ -1,0 +1,1 @@
+from app.models.User import * # type: ignore

@@ -1,13 +1,13 @@
 import threading, webbrowser, time
 from fastapi import FastAPI, Request
-from api.v1.controllers import users, auth
-from models.db import metadata
-from database import engine
+from app.api.v1.controllers import users, auth
+from app.models import metadata
+from app.db.database import engine
 from contextlib import asynccontextmanager
 from slowapi.errors import RateLimitExceeded
 from fastapi.responses import JSONResponse
 from slowapi.middleware import SlowAPIMiddleware
-from utils.rate_limiter import limiter
+from app.common.utils.rate_limiter import limiter
 
 import uvicorn
 
